@@ -198,12 +198,11 @@ span{
    height: 220px;
    width: 101%;
    margin-top: 70px;
+
 }
-.last-rows{
-    padding: 40px;
-    display: grid;
-    grid-template-columns: 20% 20% 60%;
-    
+.Dubbi{
+    border-bottom: black solid 2px;
+
 }
 .nondisponibile{
     color: green;

@@ -31,3 +31,12 @@ width: 1000px;
 .ridotta {
     height: 220px;
 }
+a{
+    color: black;
+}
+a:hover{
+    color: white;
+}
+p{
+    font-size: 23px;
+}
