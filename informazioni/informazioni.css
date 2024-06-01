@@ -1,0 +1,33 @@
+body{
+    overflow-x: hidden;
+    background-color: #ccc;
+}
+.nav-bar {  
+    align-items: center;
+    padding: 0px;
+    background-color: gray;
+    height: 70px; /* Altezza del .nav-bar */
+   
+    padding: 7 10px;   /* Aggiunta di spaziatura ai lati */
+    justify-content: space-between; /* Per spaziare gli elementi all'interno del .nav-bar */
+}
+.nav-bar img{
+    margin-left: 450px;
+    height: 140px;
+    width: 400px;
+}
+.tornaindietro{
+    margin-top: 40px;
+    margin-left: 30px;
+}
+.interapag img{
+width: 1000px;
+}
+.quest{
+    
+    margin-left: 30px;
+    margin-right: 400px;
+}
+.ridotta {
+    height: 220px;
+}
