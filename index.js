@@ -134,7 +134,7 @@ function startCountdown(elementId, days, hours, minutes, seconds) {
         var minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
         var seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
 
-        countdownElement.innerHTML = "Questo prezzo scadrà tra " + days + " giorni " + (hours < 10 ? '0' : '') + hours + ":" + (minutes < 10 ? '0' : '') + minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
+        countdownElement.innerHTML = "Questo prezzo scadrà tra "+ "<br>" + days + " giorni " + (hours < 10 ? '0' : '') + hours + ":" + (minutes < 10 ? '0' : '') + minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
     }
 
     var countdownInterval = setInterval(updateCountdown, 1000);
@@ -142,4 +142,4 @@ function startCountdown(elementId, days, hours, minutes, seconds) {
 }
 
 // Avvio del countdown per il prodotto
-startCountdown('countdown3', 6, 24, 30, 10);
+startCountdown('countdown4', 6, 24, 30, 10);
