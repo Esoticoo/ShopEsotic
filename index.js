@@ -134,7 +134,7 @@ function startCountdown(elementId, days, hours, minutes, seconds) {
         var minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
         var seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
 
-        countdownElement.innerHTML = "Questo prezzo scadrà"+ "<br>"+ "tra "+ days + " giorni " + (hours < 10 ? '0' : '') + hours + ":" + (minutes < 10 ? '0' : '') + minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
+        countdownElement.innerHTML = "l'articolo verrà aggiornato"+ "<br>"+ "tra "+ days + " giorni " + (hours < 10 ? '0' : '') + hours + ":" + (minutes < 10 ? '0' : '') + minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
     }
 
     var countdownInterval = setInterval(updateCountdown, 1000);
