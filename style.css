@@ -207,6 +207,16 @@ span{
 .nondisponibile{
     color: green;
 }
+.countdown {
+    font-size: 1em;
+    color: #555;
+    margin-top: 10px;
+}
+.original-price {
+    text-decoration: line-through;
+    color: #999;
+    margin-top: 10px;
+}
   @media (max-width: 600px) {
     .trasparente{
         color: transparent;

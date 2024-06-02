@@ -98,3 +98,48 @@ righeContainer.addEventListener('mouseleave', function() {
     document.querySelector('.scroll-left').style.display = 'none';
     document.querySelector('.scroll-right').style.display = 'none';
 });
+
+
+
+
+function startCountdown(elementId, days, hours, minutes, seconds) {
+    var countdownElement = document.getElementById(elementId);
+    var targetTime = localStorage.getItem('targetTime_' + elementId);
+
+    if (!targetTime) {
+        targetTime = new Date();
+        targetTime.setDate(targetTime.getDate() + days);
+        targetTime.setHours(targetTime.getHours() + hours);
+        targetTime.setMinutes(targetTime.getMinutes() + minutes);
+        targetTime.setSeconds(targetTime.getSeconds() + seconds);
+        localStorage.setItem('targetTime_' + elementId, targetTime);
+    } else {
+        targetTime = new Date(targetTime);
+    }
+
+    function updateCountdown() {
+        var now = new Date();
+        var remainingTime = targetTime - now;
+
+        if (remainingTime <= 0) {
+            countdownElement.innerHTML = "Offerta scaduta";
+            clearInterval(countdownInterval);
+            localStorage.removeItem('targetTime_' + elementId);
+            return;
+        }
+
+        var days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
+
+        var hours = Math.floor((remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
+
+        countdownElement.innerHTML = "Questo prezzo scadrà tra " + days + " giorni " + (hours < 10 ? '0' : '') + hours + ":" + (minutes < 10 ? '0' : '') + minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
+    }
+
+    var countdownInterval = setInterval(updateCountdown, 1000);
+    updateCountdown(); // Avvia immediatamente il countdown
+}
+
+// Avvio del countdown per il prodotto
+startCountdown('countdown3', 6, 24, 30, 10);

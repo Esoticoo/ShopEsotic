@@ -1,42 +1,95 @@
-body{
+body {
     overflow-x: hidden;
     background-color: #ccc;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
 }
-.nav-bar {  
-    align-items: center;
-    padding: 0px;
-    background-color: gray;
-    height: 70px; /* Altezza del .nav-bar */
-   
-    padding: 7 10px;   /* Aggiunta di spaziatura ai lati */
-    justify-content: space-between; /* Per spaziare gli elementi all'interno del .nav-bar */
-}
-.nav-bar img{
-    margin-left: 450px;
-    height: 140px;
-    width: 400px;
-}
-.tornaindietro{
-    margin-top: 40px;
-    margin-left: 30px;
-}
-.interapag img{
-width: 1000px;
-}
-.quest{
+
+.nav-bar {
     
-    margin-left: 30px;
-    margin-right: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centra l'immagine orizzontalmente */
+    background-color: gray;
+    height: 70px; /* Altezza della nav-bar */
+    padding: 0 10px;
 }
-.ridotta {
-    height: 220px;
+
+.nav-bar img {
+    
+    height: auto;
+    width: 100%;
+    max-width: 200px; /* Dimensioni massime per l'immagine */
+    margin: 0 auto; /* Centra l'immagine orizzontalmente */
 }
-a{
+
+.tornaindietro {
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+.tornaindietro a {
+    text-decoration: none;
     color: black;
 }
-a:hover{
+
+.tornaindietro a:hover {
     color: white;
 }
-p{
-    font-size: 23px;
+
+.interapag {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.interapag img {
+    width: 100%;
+    max-width: 1000px;
+}
+
+.quest {
+    margin: 20px 0;
+    width: 100%;
+    max-width: 1000px;
+}
+
+.ridotta {
+    width: 100%;
+    max-width: 500px;
+}
+
+p {
+    font-size: 18px;
+}
+
+@media (max-width: 768px) {
+    .nav-bar {
+        justify-content: center;
+        width: 100%;
+        padding: 0 0px;
+    }
+
+    .nav-bar img {
+        max-width: 150px; /* Dimensioni massime per l'immagine sui dispositivi mobili */
+    }
+
+    .tornaindietro, .quest {
+        margin-left: 0px;
+        margin-right: 0px; /* Riduce il margine sui dispositivi mobili */
+    }
+
+    .quest {
+        width: 100%; /* Assicura che le quest si adattino alla larghezza dello schermo */
+    }
+
+    .ridotta {
+        max-width: 100%;
+    }
+
+    p {
+        font-size: 19px; /* Riduce leggermente la dimensione del testo sui dispositivi mobili */
+    }
 }
