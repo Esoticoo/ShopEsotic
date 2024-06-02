@@ -209,12 +209,12 @@ span{
 }
 .countdown {
     font-size: 1em;
-    color: #555;
+    color: black;
     margin-top: 10px;
 }
 .original-price {
     text-decoration: line-through;
-    color: #999;
+    color: #000000;
     margin-top: 10px;
 }
   @media (max-width: 600px) {
