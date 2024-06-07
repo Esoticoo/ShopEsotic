@@ -176,8 +176,8 @@ startCountdown('countdownufficiale0', '2024-06-09T12:00:00Z', {
 
 startCountdown('countdowufficiale1', '2024-06-15T12:00:00Z', {
     link: "https://amzn.to/4aRwBiP",
-    imgSrc: "prodotti/tablet.png",
-    name: "Gillette Fusion 5 LAMETTE",
+    imgSrc: "prodotti/lamette.png",
+    name: "Gillette Fusion 5 LAMETTE"+"<br>"+ "12 Ricambi",
     originalPrice: "Prezzo originario: €38 ,46",
     discount: "-19%",
     price: "€30.<sup>99</sup>"
