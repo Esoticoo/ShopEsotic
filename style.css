@@ -218,6 +218,22 @@ span{
     color: #000000;
     margin-top: 10px;
 }
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.rotate-icon {
+    display: inline-block;
+    animation: rotate 2s linear infinite;
+    font-size: 24px; /* Puoi cambiare la dimensione come preferisci */
+    margin-right: 5px;
+}
+
   @media (max-width: 600px) {
     .trasparente{
         color: transparent;
@@ -312,4 +328,7 @@ span{
     margin-top: 70px;
     width: 100%;
  }
+}
+.ok{
+    height:10000px;
 }
