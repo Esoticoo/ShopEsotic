@@ -9,7 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
         { name: 'Tablet lenovo', url: 'https://amzn.to/3KpWE5V' },
         {name: 'Google Pixel 8', url: 'https://amzn.to/3X6zMA1' },
         {name: 'Maglia roma' , url:'https://amzn.to/4aKisUE'},
-        {name: 'Carta Igenica' , url: 'https://amzn.to/3R8HA0t'}
+        {name: 'Carta Igenica' , url: 'https://amzn.to/3R8HA0t'},
+        {name: 'Samsung TV' , url: 'https://amzn.to/3yNZOhj'},
+        {name: 'Lamette Gilette' , url: 'https://amzn.to/4aRwBiP'}
         // Aggiungi altri prodotti con i relativi URL...
     ];
 
@@ -102,44 +104,81 @@ righeContainer.addEventListener('mouseleave', function() {
 
 
 
-function startCountdown(elementId, days, hours, minutes, seconds) {
-    var countdownElement = document.getElementById(elementId);
-    var targetTime = localStorage.getItem('targetTime_' + elementId);
 
-    if (!targetTime) {
-        targetTime = new Date();
-        targetTime.setDate(targetTime.getDate() + days);
-        targetTime.setHours(targetTime.getHours() + hours);
-        targetTime.setMinutes(targetTime.getMinutes() + minutes);
-        targetTime.setSeconds(targetTime.getSeconds() + seconds);
-        localStorage.setItem('targetTime_' + elementId, targetTime);
-    } else {
-        targetTime = new Date(targetTime);
+
+
+function startCountdown(elementId, endDate, newProductDetails) {
+    var countdownElement = document.getElementById(elementId);
+    var isProductUpdated = localStorage.getItem('isProductUpdated_' + elementId);
+
+    if (isProductUpdated === 'true') {
+        // Se il prodotto è già stato aggiornato, mostra direttamente il nuovo prodotto
+        updateProduct(elementId, newProductDetails);
+        return;
+    }
+
+    var targetTime = new Date(endDate).getTime();
+
+    function updateProduct(elementId, newProductDetails) {
+        var prodottoElement = document.getElementById(elementId).closest('.prodotto');
+        var newProductHTML = `
+            <a href="${newProductDetails.link}">
+                <img src="${newProductDetails.imgSrc}" alt="${newProductDetails.name}">
+                <div class="dettagli-prodotto">
+                    <h3>${newProductDetails.name}</h3>
+                    <p class="original-price">${newProductDetails.originalPrice}</p>
+                    <p style="color: red;">${newProductDetails.discount}</p>
+                    <p>${newProductDetails.price}</p>
+                </div>
+            </a>
+        `;
+        prodottoElement.innerHTML = newProductHTML;
+        // Salva lo stato del prodotto aggiornato in localStorage
+        localStorage.setItem('isProductUpdated_' + elementId, 'true');
     }
 
     function updateCountdown() {
-        var now = new Date();
+        var now = new Date().getTime();
         var remainingTime = targetTime - now;
 
         if (remainingTime <= 0) {
             countdownElement.innerHTML = "Offerta scaduta";
             clearInterval(countdownInterval);
-            localStorage.removeItem('targetTime_' + elementId);
+            updateProduct(elementId, newProductDetails);
             return;
         }
 
         var days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
-
         var hours = Math.floor((remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         var minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
         var seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
 
-        countdownElement.innerHTML = "l'articolo verrà aggiornato"+ "<br>"+ "tra "+ days + " giorni " + (hours < 10 ? '0' : '') + hours + ":" + (minutes < 10 ? '0' : '') + minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
+        countdownElement.innerHTML = "<i class='fas fa-clock rotate-icon'></i> L'articolo verrà"+"<br>"+" aggiornato tra " + 
+            (days > 0 ? days + " giorni " : "") + "<br>"+
+            (hours < 10 ? '0' : '') + hours + ":" + 
+            (minutes < 10 ? '0' : '') + minutes + ":" + 
+            (seconds < 10 ? '0' : '') + seconds;
     }
 
     var countdownInterval = setInterval(updateCountdown, 1000);
     updateCountdown(); // Avvia immediatamente il countdown
 }
 
-// Avvio del countdown per il prodotto
-startCountdown('countdown4', 6, 24, 30, 10);
+// Avvio del countdown per i prodotti con date di fine fisse
+startCountdown('countdownufficiale0', '2024-06-09T12:00:00Z', {
+    link: "https://amzn.to/3yNZOhj",
+    imgSrc: "prodotti/tv.png",
+    name: "Samsung TV",
+    originalPrice: "Prezzo originario: €419,99",
+    discount: "-10%",
+    price: "€379.<sup>00</sup>"
+});
+
+startCountdown('countdowufficiale1', '2024-06-15T12:00:00Z', {
+    link: "https://amzn.to/4aRwBiP",
+    imgSrc: "prodotti/tablet.png",
+    name: "Gillette Fusion 5 LAMETTE",
+    originalPrice: "Prezzo originario: €38 ,46",
+    discount: "-19%",
+    price: "€30.<sup>99</sup>"
+});
