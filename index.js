@@ -167,7 +167,7 @@ function startCountdown(elementId, endDate, newProductDetails) {
 }
 
 // Avvio del countdown per i prodotti con date di fine fisse
-startCountdown('countdownufficiale2', '2024-06-09T12:00:00Z', {
+startCountdown('countdownufficiale3', '2024-06-09T12:00:00Z', {
     link: "https://amzn.to/3yNZOhj",
     imgSrc: "prodotti/tv.png",
     name: "Samsung TV",
@@ -176,7 +176,7 @@ startCountdown('countdownufficiale2', '2024-06-09T12:00:00Z', {
     price: "€379.<sup>00</sup>"
 });
 
-startCountdown('countdowufficiale1', '2024-06-15T12:00:00Z', {
+startCountdown('countdowufficiale4', '2024-06-15T12:00:00Z', {
     link: "https://amzn.to/4aRwBiP",
     imgSrc: "prodotti/lamette.png",
     name: "Gillette Fusion 5 LAMETTE"+"<br>"+ "12 Ricambi",
