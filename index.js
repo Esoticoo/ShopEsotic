@@ -152,14 +152,12 @@ function startCountdown(elementId, endDate, newProductDetails) {
         var hours = Math.floor((remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         var minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
         var seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
-        
+
         countdownElement.innerHTML = "<i class='fas fa-clock rotate-icon'></i> L'articolo verrà"+"<br>"+" aggiornato tra " + 
             (days > 0 ? days + " giorni " : "") + "<br>"+
             (hours < 10 ? '0' : '') + hours + ":" + 
             (minutes < 10 ? '0' : '') + minutes + ":" + 
             (seconds < 10 ? '0' : '') + seconds;
-        
-      
     }
 
     var countdownInterval = setInterval(updateCountdown, 1000);
@@ -176,7 +174,7 @@ startCountdown('countdownufficiale3', '2024-06-09T12:00:00Z', {
     price: "€379.<sup>00</sup>"
 });
 
-startCountdown('countdowufficiale4', '2024-06-15T12:00:00Z', {
+startCountdown('countdowufficiale1', '2024-06-15T12:00:00Z', {
     link: "https://amzn.to/4aRwBiP",
     imgSrc: "prodotti/lamette.png",
     name: "Gillette Fusion 5 LAMETTE"+"<br>"+ "12 Ricambi",
@@ -184,4 +182,3 @@ startCountdown('countdowufficiale4', '2024-06-15T12:00:00Z', {
     discount: "-19%",
     price: "€30.<sup>99</sup>"
 });
-
