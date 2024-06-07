@@ -152,12 +152,34 @@ function startCountdown(elementId, endDate, newProductDetails) {
         var hours = Math.floor((remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         var minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
         var seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
-
+       if(days>2){
         countdownElement.innerHTML = "<i class='fas fa-clock rotate-icon'></i> L'articolo verrà"+"<br>"+" aggiornato tra " + 
             (days > 0 ? days + " giorni " : "") + "<br>"+
             (hours < 10 ? '0' : '') + hours + ":" + 
             (minutes < 10 ? '0' : '') + minutes + ":" + 
             (seconds < 10 ? '0' : '') + seconds;
+       }
+       else{
+        countdownElement.innerHTML = "<i class='fas fa-clock rotate-icon'></i> L'articolo verrà"+"<br>"+" aggiornato tra " + 
+        (days > 0 ? days + " giorno " : "") + "<br>"+
+        (hours < 10 ? '0' : '') + hours + ":" + 
+        (minutes < 10 ? '0' : '') + minutes + ":" + 
+        (seconds < 10 ? '0' : '') + seconds;
+       }
+       if(days<1){
+        countdownElement.innerHTML = "<i class='fas fa-clock rotate-icon'></i> L'articolo verrà"+"<br>"+" aggiornato tra " + 
+        (days > 0 ? days + " giorno " : "") + "<br>"+
+        (hours < 10 ? '0' : '') + hours + ":" + 
+        (minutes < 10 ? '0' : '') + minutes + ":" + 
+        (seconds < 10 ? '0' : '') + seconds + " Ore";
+       }
+       if(hours<1){
+        countdownElement.innerHTML = "<i class='fas fa-clock rotate-icon'></i> L'articolo verrà"+"<br>"+" aggiornato tra " + 
+        (days > 0 ? days + " giorno " : "") + "<br>"+
+        (hours < 10 ? '0' : '') + hours + ":" + 
+        (minutes < 10 ? '0' : '') + minutes + ":" + 
+        (seconds < 10 ? '0' : '') + seconds + " Minuti";
+       }
     }
 
     var countdownInterval = setInterval(updateCountdown, 1000);
