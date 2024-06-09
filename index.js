@@ -9,8 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
         { name: 'Tablet lenovo', url: 'https://amzn.to/3KpWE5V' },
         {name: 'Google Pixel 8', url: 'https://amzn.to/3X6zMA1' },
         {name: 'Maglia roma' , url:'https://amzn.to/4aKisUE'},
-        {name: 'Carta Igenica' , url: 'https://amzn.to/3R8HA0t'},
+        {name: 'Zanzariera Magnetica' , url: 'https://amzn.to/4bMDm6W'},
         {name: 'Samsung TV' , url: 'https://amzn.to/3yNZOhj'},
+        {name: 'Dash pods' , url: 'https://amzn.to/4bSgpiT'},
         {name: 'Lamette Gilette' , url: 'https://amzn.to/4aRwBiP'}
         // Aggiungi altri prodotti con i relativi URL...
     ];
@@ -187,13 +188,13 @@ function startCountdown(elementId, endDate, newProductDetails) {
 }
 
 // Avvio del countdown per i prodotti con date di fine fisse
-startCountdown('countdownufficiale10', '2024-06-09T12:00:00Z', {
-    link: "https://amzn.to/3yNZOhj",
-    imgSrc: "prodotti/tv.png",
-    name: "Samsung TV",
-    originalPrice: "Prezzo originario: €419,99",
-    discount: "-10%",
-    price: "€379.<sup>00</sup>"
+startCountdown('countdownufficiale12', '2024-06-11T12:00:00Z', {
+    link: "https://amzn.to/4bMDm6W",
+    imgSrc: "prodotti/zanzariera.png",
+    name: "Zanzariera magnetica finestra",
+    originalPrice: "Prezzo originario: €22,99",
+    discount: "-0%",
+    price: "€22.<sup>99</sup>"
 });
 
 startCountdown('countdownufficiale11', '2024-06-15T12:00:00Z', {
