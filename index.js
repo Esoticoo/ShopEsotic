@@ -191,17 +191,17 @@ function startCountdown(elementId, endDate, newProductDetails) {
 startCountdown('countdownufficiale12', '2024-06-11T12:00:00Z', {
     link: "https://amzn.to/4bMDm6W",
     imgSrc: "prodotti/zanzariera.png",
-    name: "Zanzariera magnetica finestra",
-    originalPrice: "Prezzo originario: €22,99",
-    discount: "-0%",
+    name: "Zanzariera " + "<br> "+ " magnetica finestra",
+    originalPrice: "",
+    discount: "",
     price: "€22.<sup>99</sup>"
 });
 
 startCountdown('countdownufficiale11', '2024-06-15T12:00:00Z', {
     link: "https://amzn.to/4aRwBiP",
     imgSrc: "prodotti/lamette.png",
-    name: "Gillette Fusion 5 LAMETTE"+"<br>"+ "12 Ricambi",
-    originalPrice: "Prezzo originario: €38 ,46",
-    discount: "-19%",
-    price: "€30.<sup>99</sup>"
+    name: "Gillette Fusion 5 "+"<br>"+ " LAMETTE 12" + "<br>"+" Ricambi",
+    originalPrice: "Prezzo originario: €42,99",
+    discount: "-14% ",
+    price: "€36.<sup>93</sup>"
 });
